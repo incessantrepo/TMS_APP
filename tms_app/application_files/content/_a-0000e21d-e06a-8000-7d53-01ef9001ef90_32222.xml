@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000e236-2108-8000-23f0-01ef9001ef90_24383</versionUuid>
+    <versionUuid>_a-0000e21d-e06a-8000-7d53-01ef9001ef90_39285</versionUuid>
     <rule>
         <name>TMS_uiSectionStateGrid</name>
         <uuid>_a-0000e21d-e06a-8000-7d53-01ef9001ef90_32222</uuid>
@@ -15,44 +15,56 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>
-#"SYSTEM_SYSRULES_formLayout_v1"(
-  contents:{
+        <definition>load(
+  local!stateDetails:#"_a-0000e21d-e06a-8000-7d53-01ef9001ef90_32216"(),
+  local!pagingInfo:#"SYSTEM_SYSRULES_pagingInfo"(
+    startIndex: 1,
+    batchSize: 5
+  ),
+  with(
+  local!data:todatasubset(
+    local!stateDetails,
+    local!pagingInfo
+  ),
   #"SYSTEM_SYSRULES_sectionLayout_v1"(
+  label: "State Details",
   contents: {
-     #"SYSTEM_SYSRULES_fileUploadField_v1"(
-                            label: "DDL scripts",
-                            labelPosition: "ABOVE",
-                            maxSelections:1,
-                            buttonSize: "SMALL",
-                            buttonStyle: "LINK",
-                            target: #"_a-0000e216-4a32-8000-7d53-01ef9001ef90_23655",
-                            value: ri!dociD,
-                            saveInto: ri!dociD
-                          
-                            
-                            
-                             
-                            
-                          )
-                       
+    #"SYSTEM_SYSRULES_boxLayout"(
+      label: "State Details",
+      style: "ACCENT",
+      contents: {
+        #"SYSTEM_SYSRULES_gridField"(
+      totalCount: local!data.totalCount,
+      columns: {
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "id",
+          field: "id",
+          data: index(local!data.data,"id",null())
+        ),
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "State",
+          field: "name",
+          data: index(local!data.data,"name",null())
+        ),
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "Code",
+          field: "code",
+          data: index(local!data.data,"code",null())
+        ),
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "TimeZone",
+          field: "timeZone",
+          data: index(local!data.data,"timeZone",null())
+        )
+      },
+      value: local!pagingInfo,
+      saveInto: local!pagingInfo
+    )
+    }
+    )
   }
 )
-},
-buttons:#"SYSTEM_SYSRULES_ButtonLayout"(
-  
-primaryButtons:    #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
-                            label:"Submit"
-                          )
-                          )
-)</definition>
-        <namedTypedValue>
-            <name>dociD</name>
-            <type>
-                <name>int</name>
-                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
-            </type>
-        </namedTypedValue>
+))</definition>
         <metadataExpr></metadataExpr>
         <preferredEditor>interface</preferredEditor>
         <offlineEnabled>false</offlineEnabled>
@@ -91,6 +103,5 @@ primaryButtons:    #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
         <historyInfo versionUuid="_a-0000e21d-e06a-8000-7d53-01ef9001ef90_33007"/>
         <historyInfo versionUuid="_a-0000e21d-e06a-8000-7d53-01ef9001ef90_37149"/>
         <historyInfo versionUuid="_a-0000e21d-e06a-8000-7d53-01ef9001ef90_39285"/>
-        <historyInfo versionUuid="_a-0000e236-2108-8000-23f0-01ef9001ef90_24383"/>
     </history>
 </contentHaul>
