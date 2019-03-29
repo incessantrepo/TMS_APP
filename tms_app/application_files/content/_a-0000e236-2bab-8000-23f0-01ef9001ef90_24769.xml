@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000e236-2bab-8000-23f0-01ef9001ef90_24773</versionUuid>
+    <versionUuid>_a-0000e236-2bab-8000-23f0-01ef9001ef90_26001</versionUuid>
     <rule>
         <name>TMS_expRule</name>
         <uuid>_a-0000e236-2bab-8000-23f0-01ef9001ef90_24769</uuid>
@@ -15,7 +15,7 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition></definition>
+        <definition>"hvjh hbjh "</definition>
         <preferredEditor>legacy</preferredEditor>
         <offlineEnabled>false</offlineEnabled>
     </rule>
@@ -45,7 +45,31 @@
             <groups/>
         </role>
     </roleMap>
+    <typedValue>
+        <type>
+            <name>RuleTestConfig?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:name>Username</a:name>
+                <a:assertions>
+                    <a:expectedOutput xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <a:resultAssertions>false()</a:resultAssertions>
+                </a:assertions>
+            </el>
+            <el>
+                <a:name>etEmployerDetails</a:name>
+                <a:assertions>
+                    <a:expectedOutput xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <a:resultAssertions>exact("A","B")</a:resultAssertions>
+                </a:assertions>
+            </el>
+        </value>
+    </typedValue>
     <history>
         <historyInfo versionUuid="_a-0000e236-2bab-8000-23f0-01ef9001ef90_24773"/>
+        <historyInfo versionUuid="_a-0000e236-2bab-8000-23f0-01ef9001ef90_24845"/>
+        <historyInfo versionUuid="_a-0000e236-2bab-8000-23f0-01ef9001ef90_26001"/>
     </history>
 </contentHaul>
