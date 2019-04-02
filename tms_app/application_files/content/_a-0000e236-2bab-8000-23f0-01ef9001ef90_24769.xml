@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000e236-2bab-8000-23f0-01ef9001ef90_24773</versionUuid>
+    <versionUuid>_a-0000e236-2bab-8000-23f0-01ef9001ef90_24845</versionUuid>
     <rule>
         <name>TMS_expRule</name>
         <uuid>_a-0000e236-2bab-8000-23f0-01ef9001ef90_24769</uuid>
@@ -15,7 +15,7 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition></definition>
+        <definition>"Test exp rule"</definition>
         <preferredEditor>legacy</preferredEditor>
         <offlineEnabled>false</offlineEnabled>
     </rule>
@@ -47,5 +47,6 @@
     </roleMap>
     <history>
         <historyInfo versionUuid="_a-0000e236-2bab-8000-23f0-01ef9001ef90_24773"/>
+        <historyInfo versionUuid="_a-0000e236-2bab-8000-23f0-01ef9001ef90_24845"/>
     </history>
 </contentHaul>
